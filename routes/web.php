@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*
+ * Applications Routes
+ */
+
+/*
+ * Administration Routes
+ */
+Auth::routes();
+Route::get('/home', 'ConversationsController@index')->name('home');
+Route::get('/conversations', 'ConversationsController@index')->name('conversations');
+Route::get('/conversations/{user}', 'ConversationsController@index');
+
